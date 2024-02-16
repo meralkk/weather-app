@@ -49,6 +49,14 @@ const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
 
+
+searchBox.addEventListener("keydown", function(evenet)
+{
+    if(event.key === "Enter") {
+        checkWeather(searchBox.value);
+    }
+});
+
 async function checkWeather (city){
 
     const response  = await fetch(apiUrl + city + `&appid=${apiKey}`);  //fetch data
